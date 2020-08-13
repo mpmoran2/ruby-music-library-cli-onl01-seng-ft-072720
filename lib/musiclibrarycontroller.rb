@@ -42,8 +42,9 @@ class MusicLibraryController
     alpha_song = Song.all.sort_by do |song| 
       song.name
     end
-    alpha_song.each.with_index(1) do |index,song|
+    alpha_song.each.with_index(1) do |song,index|
       puts "#{index}. #{song.name}"
+      binding.pry
     end 
   end
 
