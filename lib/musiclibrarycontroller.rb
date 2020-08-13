@@ -38,32 +38,31 @@ class MusicLibraryController
   end
 
   def list_songs
-    songs_sorted_by_name = Song.all.sort_by do |song|
+    alpha_song = Song.all.sort_by do |song| 
       song.name
     end
-    songs_sorted_by_name.each.with_index(1) do |song,index|
+    alpha_song.each.with_index(1) do |index,song|
       puts "#{index}. #{song.name}"
-    end
+    end 
   end
 
   def list_artists
-    songs_sorted_by_artist = Artist.all.sort_by do |artist| 
+    alpha_artist = Artist.all.sort_by do |artist| 
       artist.name
     end
-    songs_sorted_by_artist.each.with_index(1) do |artist,index|
+    alpha_artist.each.with_index(1) do |artist,index|
       puts "#{index}. #{artist.name}"
     end
   end
 
   def list_genres
-    songs_sorted_by_genre = Genre.all.sort_by do |genre|
+    alpha_genre = Genre.all.sort_by do |genre|
       genre.name
     end
-    songs_sorted_by_genre.each.with_index(1) do |genre,index|
+    alpha_genre.each.with_index(1) do |genre,index|
       puts "#{index}. #{genre.name}"
     end
   end
-
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
@@ -99,8 +98,6 @@ class MusicLibraryController
     if (1..Song.all.length).include?(input)
       song = list_of_songs[input+2]
       puts "Playing #{song.name} by #{song.artist.name}"
-    else 
-      print "No song by that name"
     end
   end
 
