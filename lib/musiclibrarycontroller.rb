@@ -1,4 +1,5 @@
 require 'pry'
+
 class MusicLibraryController
 
   def initialize(path = "./db/mp3s")
@@ -44,7 +45,7 @@ class MusicLibraryController
     end
     alpha_song.each.with_index(1) do |song,index|
       puts "#{index}. #{song.name}"
-      binding.pry
+    binding.pry
     end 
   end
 
