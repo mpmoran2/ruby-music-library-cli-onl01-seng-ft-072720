@@ -40,7 +40,6 @@ class MusicLibraryController
   end
 
   def list_songs
-    binding.pry
     alpha_song = Song.all.sort_by do |song| 
       song.name
     end
